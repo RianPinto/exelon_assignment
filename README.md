@@ -1,4 +1,4 @@
 # exelon_assignment
 
-npm i
+npm i \n
 npm run serve

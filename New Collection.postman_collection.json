@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "41c38a01-4140-4fc7-ba6a-0e2424deead6",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37893304",
+		"_collection_link": "https://www.postman.com/lunar-module-astronaut-52174536/workspace/exelon-api/collection/37893304-41c38a01-4140-4fc7-ba6a-0e2424deead6?action=share&source=collection_link&creator=37893304"
+	},
+	"item": [
+		{
+			"name": "addCity - success",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"surathkal\",\r\n    \"population\": 1002,\r\n    \"country\": \"India\",\r\n\t\t\"latitude\": 100.311,\r\n    \"longitude\": 100.21\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_local}}/addCity",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"addCity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addCity - Err - missing field",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"surathkal\",\r\n    \"population\": 1002,\r\n    \"country\": \"India\",\r\n    \"longitude\": 100.21\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_local}}/addCity",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"addCity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update City",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\t\"population\": 1400\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_local}}/updateCity/0",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"updateCity",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete City",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/deleteCity/0",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"deleteCity",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities - all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/getCities",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"getCities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities - pages and limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/getCities?page=3&limit=2",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"getCities"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities - search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/getCities?search={\"country\":\"India\"}",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"getCities"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "{\"country\":\"India\"}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities - filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/getCities?search={\"country\":\"India\"}&filter={\"population\":\">2000\"}",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"getCities"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "{\"country\":\"India\"}"
+						},
+						{
+							"key": "filter",
+							"value": "{\"population\":\">2000\"}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities - sort",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/getCities?page=3&limit=2&sort=population:asc",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"getCities"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "3"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "sort",
+							"value": "population:asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_local",
+			"value": "http://localhost:3000"
+		}
+	]
+}
